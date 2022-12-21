@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="สร้างรูปวาดง่ายๆจากการพิมพ์" name="description">
+  <meta content="temp chat, chat, private, private chat, temp, Ellafern, Ellafern tempchat" name="keywords">
+  <meta content="Ellafern | TempChat" property="og:title">
+  <meta content="https://tempchat.ellafern.net/" property="og:url">
+  <meta content="สร้างรูปวาดง่ายๆจากการพิมพ์" property="og:description">
+  <meta content="website" property="og:type">
+  <meta content="https://cdn.discordapp.com/attachments/803211285797535755/1029237353824391218/meta.png"
+    property="og:image">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/ico/favicon-16x16.png">
+  <link rel="manifest" href="/assets/ico/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/ico/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <link href="/_main.css" rel="stylesheet">
+  <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
+  <title>Ellafern TempChat</title>
+</head>
+<body>
+  <div class="h-screen bg-neutral-800 bg-cover bg-center" style="background-image: url(https://media.discordapp.net/attachments/803211285797535755/1049708018322898954/bg-home.png);">
+    
+  <div class="fixed z-30 h-screen w-screen backdrop-blur-xl bg-black/80" id="showPrompt">
+    <div class="flex h-screen w-screen backdrop-blur-md bg-black/20">
+      <div class="m-auto">
+        <div class="text-black bg-white rounded-xl p-5">
+          <div class="grid gap-3">
+            <div>
+              <h1 class="text-3xl font-extrabold">
+                AUTH
+              </h1>
+              <p class="text-sm">
+                Enter room Id and your name
+              </p>
+            </div>
+            <div class="w-full">
+              <input type="password" id="password" class="text-black outline-none p-2 bg-black/5 rounded-xl transition-all duration-200 focus:bg-black/10" placeholder="ROOM ID">
+            </div>
+            <div class="w-full">
+              <input type="text" id="name" class="text-black outline-none p-2 bg-black/5 rounded-xl transition-all duration-200 focus:bg-black/10" placeholder="NICKNAME">
+            </div>
+            <div class="w-full flex justify-end">
+              <button type="button" onclick="start()" class="bg-pink-300 shadow-lg font-black text-white rounded-xl py-2 px-4 transition-all duration-200 hover:px-6 hover:bg-pink-400">GO</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="flex h-screen w-screen backdrop-blur-xl bg-black/80">
+      <div class="m-auto">
+        <div class="relative bg-black/95 md:rounded-xl text-white md:w-[700px] md:h-[700px] w-screen h-screen">
+          <div class="px-4 pt-3">
+            <h1 class="text-4xl font-extrabold">
+              <i class="fas fa-comments-alt mt-1"></i> CHAT
+            </h1>
+            <p class="text-sm font-light">
+              This is a tempchat
+            </p>
+          </div>
+          <div class="w-full h-4/6 overflow-y-scroll break-words mt-4 px-4" id="message">
+          </div>
+          <div class="absolute bottom-5 w-full flex gap-2 px-4">
+            <input id="messagecontent" type="text" class="p-3 text-white outline-none w-full bg-black rounded-xl transition-all duration-200" required placeholder="type something...">
+            <button type="button" onclick="send()" class="p-3 text-black bg-white rounded-lg w-12 outline-none transition-all duration-300 hover:bg-opacity-75"><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
+
+<script src="/script.js"></script>
